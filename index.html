@@ -386,43 +386,7 @@
   <footer>
     <p>© 2025 ABC University Tech Fest | Designed by Team Tanish</p>
   </footer>
-
-  <script>
-    const form = document.getElementById("registerForm");
-    const successMessage = document.getElementById("successMessage");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); 
-
-      
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const college = document.getElementById("college").value.trim();
-
-      if (!name || !email || !college) {
-        alert("⚠️ Please fill in all required fields.");
-        return;
-      }
-      if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
-        alert("⚠️ Please enter a valid email address.");
-        return;
-      }
-
-      
-      const registration = {
-        name,
-        email,
-        college,
-        event: document.getElementById("event").value,
-        notes: document.getElementById("notes").value.trim()
-      };
-      localStorage.setItem("registration_" + Date.now(), JSON.stringify(registration));
-
-    
-      successMessage.style.display = "block";
-      form.reset();
-    });
-  </script>
 </body>
+
 
 </html>
